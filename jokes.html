@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bradley Oesch - Jokes</title>
+  <meta name="description" content="Jokes for Bradley Oesch">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./css/jokes.css">
+
+  <!-- [Deprecation] Element.createShadowRoot is deprecated and will be removed in M73, around March 2019. Please use Element.attachShadow instead. See https://www.chromestatus.com/features/4507242028072960 for more details. -->
+  <script src="./scripts/sortable.js"></script>
+  <script src="./scripts/jokes.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">
+      <input type="text" id="js-title-input" class="title-input" />
+    </div>
+    <div id="js-sortable-joke" class="joke">
+    <!--
+      <div class="joke-block-container sortable">
+        <div class="joke-block-margin sortable"></div>
+        <div id="js-sortable-joke-block" class="joke-block">
+          <input type="text" id="js-initial-input" class="joke-line sortable" />
+          <input type="text" id="js-initial-input" class="joke-line sortable" />
+        </div>
+      </div>
+    -->
+    </div>
+    </div>
+    <div class="buttons">
+      <button class="cta-button" onClick="saveJoke()">Save</button>
+      <!-- <button class="cta-button" onClick="createJokeBlock(true)">Create Block</button> -->
+      <button class="cta-button" onClick="loadOptions()">Load</button>
+    </div>
+    <div id="js-title-buttons" class="buttons"></div>
+    <br />
+    <br />
+    <textarea id="js-combined" class="combined" style="display:none;"></textarea>
+    <br />
+    <!-- <a href="https://jsbin.com/rapecajusu/edit?html,js,console,output" target="_blank">jsbin</a> -->
+  </div>
+
+  <script>
+    const sortableContainer = document.getElementById('js-sortable-joke');
+    Sortable.create(sortableContainer);
+    const titleInput = document.getElementById('js-title-input');
+    addTitleListeners(titleInput);
+
+    // loadJoke('test');
+  </script>
+</body>
+</html>

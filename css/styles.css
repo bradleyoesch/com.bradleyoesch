@@ -1,0 +1,169 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333333;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: Lora;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+  display: inline-block;
+}
+
+hr {
+  border: 1px solid #eaeaea;
+  width: 400px;
+  margin: 3em auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:active, a:focus, a:visited {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover, a.selected {
+  color: #eb3d7a;
+  text-decoration: none;
+}
+
+a.selected:hover {
+  color: #bd1550;
+}
+
+a.underline {
+  text-decoration: underline;
+}
+
+.screenshot:hover {
+  background-color: #d1d1d1;
+}
+
+.sidebar {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  height: 100%;
+  float: left;
+  background-color: #fafafa;
+  border-right: 1px solid #eaeaea;
+  padding: 20px;
+}
+
+.main {
+  display: inline-block;
+  background-color: #fdfdfd;
+  float: left;
+  padding: 20px;
+  width: calc(100% - 250px);
+  height: 100%;
+  overflow-y: scroll;
+}
+.main-subsection {
+  width: 820px;
+}
+
+.screenshot {
+  background-color: #eaeaea;
+  padding: 10px;
+}
+
+.project p {
+  padding: 0 10px;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 1100px) {
+  .sidebar {
+    width: 150px;
+  }
+
+  .main {
+    width: calc(100% - 150px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-subsection {
+    width: 100%;
+  }
+
+  .screenshot {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  nav li {
+    display: inline;
+  }
+
+  .main {
+    width: 100%;
+    clear: left;
+    overflow: inherit;
+  }
+
+  .main-subsection {
+    width: auto;
+    padding-bottom: 10px;
+  }
+
+  .screenshot {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .project p {
+    padding: 0;
+  }
+  hr {
+    width: 200px;
+  }
+}

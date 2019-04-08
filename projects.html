@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Bradley Oesch - Projects</title>
+  <meta name="description" content="Projects for Bradley Oesch">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2><a href="/">Bradley Oesch</a></h2>
+    <nav>
+      <ul>
+        <li><a href="/projects" class="selected">Projects</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="https://github.com/bradleyoesch/" target="_blank">Github</a></li>
+        <li><a href="https://www.linkedin.com/pub/bradley-oesch/63/a98/45" target="_blank">LinkedIn</a></li>
+        <li><a href="https://dribbble.com/BradleyOesch" target="_blank">Dribbble</a></li>
+        <li><a href="mailto:bradley.oesch@gmail.com" target="_blank">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <section class="main">
+    <div class="main-subsection">
+      <div class="project">
+        <a href="https://twitter.com/ScraperNews" target="_blank">
+          <h2>Scraper News</h2>
+        </a>
+        <a href="https://twitter.com/ScraperNews" target="_blank">
+          <img class="screenshot" src="img/scraper-news-screenshot.jpg" alt="Screenshot of Scraper News"/>
+        </a>
+        <p class="project-info">
+          <em>November 2014</em>
+          <br />
+          <a href="https://twitter.com/ScraperNews" target="_blank">https://twitter.com/ScraperNews</a>
+        </p>
+        <p class="project-details">I realized that when I went to <a class="underline" href="http://news.ycombinator.com/" target="_blank">Hacker News</a> I would scan the page and click on titles I found interesting that also had a lot of comments, because to me that signaled that the content itself generates discussion, rather than the number of votes, which signals an attention-grabbing title. I built a Twitter bot to scrape the front page of Hacker News and tweet out any stories that have at least 70 comments. I now go to Scraper News instead of Hacker News because it condenses the information down to the most talked about articles, plus I can catch up on days I missed.</p>
+        <p class="project-details">This was built in python, using the <a class="underline" href="http://scrapy.org/" target="_blank">Scrapy</a> and <a class="underline" href="https://twython.readthedocs.org/en/latest/" target="_blank">Twython</a> libraries, and is hosted on this server through <a class="underline" href="https://www.digitalocean.com/" target="_blank">Digital Ocean</a>. The scraper runs every 15 minutes with a cron job.</p>
+      </div>
+      <hr />
+      <div class="project">
+        <a href="http://apparelmockup.bigcartel.com/" target="_blank">
+          <h2>Apparel Mockup</h2>
+        </a>
+        <a href="http://apparelmockup.bigcartel.com/" target="_blank">
+          <img class="screenshot" src="img/mockups-screenshot.jpg" alt="Screenshot of Apparel Mockup"/>
+        </a>
+        <p class="project-info">
+          <em>January 2011</em>
+          <br />
+          <a href="http://apparelmockup.bigcartel.com/" target="_blank">http://apparelmockup.bigcartel.com/</a>
+        </p>
+        <p class="project-details">In high school I spent a lot of time on a now defunct tee design forum (<a class="underline" href="http://www.emptees.com/" target="_blank">Emptees</a> and saw that many designers were either using poorly made or expensive shirt mockups. I decided to make my own high quality mockups with pictures I took, and sold them through an online marketplace. I have enjoyed a small, consistent stream of orders each month that over the last several years has resulted in a nice amount of extra money (that I now throw away on Ubers). Recently I have begun to accept custom mockup orders, where I create a mockup based on a client's own photography for their personal or commercial use.</p>
+        <p class="project-details">These were made in Photoshop, with pictures taken way back before iPhone cameras were good.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

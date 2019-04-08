@@ -1,0 +1,141 @@
+/*************
+ * variables *
+ *************/
+/**********
+ * global *
+ **********/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  background: #333;
+  color: #ededed;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+/********
+ * tags *
+ ********/
+button {
+  background: #333;
+  color: #ededed;
+  border: 2px solid #545454;
+  border-radius: .25rem;
+  font-size: .875rem;
+  font-weight: bold;
+  padding: .5rem 1.5rem; }
+  button:hover, button:focus {
+    outline: none;
+    border-color: #9a9a9a; }
+
+input[type="text"], textarea {
+  display: block;
+  font-size: 1rem;
+  font-size: .875rem;
+  width: 100%;
+  padding: .5rem;
+  border-radius: 3px;
+  border: 2px solid #545454;
+  background: #333;
+  color: #ededed; }
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #9a9a9a; }
+
+/***********
+ * classes *
+ ***********/
+.sortable {
+  cursor: grab; }
+
+.container {
+  padding: 1rem;
+  margin: 0; }
+
+.title {
+  margin-bottom: 1rem; }
+  .title .title-input {
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; }
+    .title .title-input.invalid {
+      border-color: #6f3c3c; }
+
+/*
+// left-border on hover, doesn't work when you resort
+.joke-block-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 .5rem 0 0;
+  background-color: $color-background;
+  border-color: $color-border;
+  transition: $transition;
+
+  &.active {
+    border-left: $border;
+  }
+
+  &.sortable-chosen {
+    background-color: $color-background;
+  }
+}
+*/
+.joke {
+  margin-bottom: 1rem; }
+  .joke .joke-block-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border: 2px solid #545454;
+    padding: 0 .5rem 0 0;
+    border-bottom-width: 0;
+    transition: all 0.2s ease-out; }
+    .joke .joke-block-container:first-child {
+      border-radius: .25rem .25rem 0 0; }
+    .joke .joke-block-container:last-child {
+      border-radius: 0 0 .25rem .25rem;
+      border-bottom-width: 2px; }
+    .joke .joke-block-container.sortable-chosen {
+      border-bottom-width: 2px;
+      background-color: #333; }
+    .joke .joke-block-container .joke-block-margin {
+      flex: 0 0 3rem;
+      z-index: 1; }
+    .joke .joke-block-container .joke-block {
+      flex: 1 0 0;
+      margin-left: -2.5rem;
+      transition: all 0.2s ease-out; }
+      .joke .joke-block-container .joke-block.active {
+        margin-left: 0; }
+      .joke .joke-block-container .joke-block .joke-line {
+        margin: .5rem .5rem .5rem 0; }
+        .joke .joke-block-container .joke-block .joke-line.todo:not(:focus) {
+          border-color: #94901f; }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; }
+  .buttons .cta-button, .buttons .title-button {
+    margin-right: 1rem; }
+    .buttons .cta-button:last-child, .buttons .title-button:last-child {
+      margin-right: 0; }
+
+.combined {
+  width: 100%;
+  height: 10rem;
+  font-size: 1rem;
+  padding: .5rem;
+  margin-bottom: .5rem; }
+
+/*# sourceMappingURL=jokes.css.map */

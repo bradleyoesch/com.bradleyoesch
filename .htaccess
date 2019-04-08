@@ -1,0 +1,8 @@
+Options -MultiViews
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^bradleyoesch.com$
+RewriteRule ^/?$ "http\:\/\/www\.bradleyoesch\.com\/" [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [L,R=301]
