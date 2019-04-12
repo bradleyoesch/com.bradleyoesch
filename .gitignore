@@ -1,3 +1,5 @@
 .DS_Store
 scss/.sass-cache/
 *.pdf
+_cage/
+_cusack/
