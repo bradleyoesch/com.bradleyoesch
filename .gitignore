@@ -1,5 +1,8 @@
 .DS_Store
-scss/.sass-cache/
 *.pdf
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 _cage/
 _cusack/
