@@ -53,7 +53,7 @@ const Line = {
 
     const previousJokeBlockContainer = jokeBlock.parentNode.previousElementSibling;
     if (previousJokeBlockContainer) {
-      const lines = previousJokeBlockContainer.getElementsByClassName('joke-line');
+      const lines = previousJokeBlockContainer.getElementsByClassName('joke_line');
       if (lines.length) {
         return lines[lines.length - 1];
       }
@@ -70,7 +70,7 @@ const Line = {
 
     const nextJokeBlockContainer = jokeBlock.parentNode.nextElementSibling;
     if (nextJokeBlockContainer) {
-      const lines = nextJokeBlockContainer.getElementsByClassName('joke-line');
+      const lines = nextJokeBlockContainer.getElementsByClassName('joke_line');
       if (lines.length) {
         return lines[0];
       }
@@ -153,12 +153,12 @@ function getJoke(title) {
   return getJokes[title];
 }
 
-// <div id="js-sortable-joke" class="joke">
-//   <div class="joke-block-container sortable">
-//     <div class="joke-block-margin sortable"></div>
-//     <div id="js-sortable-joke-block" class="joke-block">
-//       <input type="text" id="js-initial-input" class="joke-line sortable" />
-//       <input type="text" id="js-initial-input" class="joke-line sortable" />
+// <div id="js-joke--sortable" class="joke">
+//   <div class="joke_block--container sortable">
+//     <div class="joke_block--margin sortable"></div>
+//     <div id="js-joke_block--sortable" class="joke_block">
+//       <input type="text" class="joke_line sortable" />
+//       <input type="text" class="joke_line sortable" />
 //     </div>
 //   </div>
 // </div>
@@ -167,7 +167,7 @@ function getJoke(title) {
  * Creates a new line element at end of and inside of element `el`
  */
 function createNewLine(el, value = '', position = 'beforeend') {
-  const input = El.create('input', { type: 'text', className: 'joke-line sortable', value: value });
+  const input = El.create('input', { type: 'text', className: 'joke_line sortable', value: value });
   addLineListeners(input);
   el.insertAdjacentElement(position, input);
   input.focus();
@@ -214,11 +214,11 @@ function removeLine(line, focus = true) {
 }
 
 function createJokeBlock(sourceLine) {
-  const jokeBlockContainer = El.create('div', { className: 'joke-block-container sortable' });
-  const jokeBlockMargin = El.create('div', { className: 'joke-block-margin sortable' });
+  const jokeBlockContainer = El.create('div', { className: 'joke_block--container sortable' });
+  const jokeBlockMargin = El.create('div', { className: 'joke_block--margin sortable' });
   addMarginListeners(jokeBlockMargin);
-  const jokeBlockId = uniqueId('js-sortable-joke-block');
-  const jokeBlock = El.create('div', { id: jokeBlockId, className: 'joke-block' });
+  const jokeBlockId = uniqueId('js-joke_block--sortable');
+  const jokeBlock = El.create('div', { id: jokeBlockId, className: 'joke_block' });
   jokeBlockContainer.appendChild(jokeBlockMargin);
   jokeBlockContainer.appendChild(jokeBlock);
   // TODO: handles?
@@ -231,7 +231,7 @@ function createJokeBlock(sourceLine) {
     sourceBlockContainer.insertAdjacentElement('afterend', jokeBlockContainer);
   } else {
     // will have to just add it to end of parent joke itself
-    const jokeContainer = document.getElementById('js-sortable-joke');
+    const jokeContainer = document.getElementById('js-joke--sortable');
     jokeContainer.appendChild(jokeBlockContainer);
   }
 
@@ -253,7 +253,7 @@ function showOnPage(title, groups) {
 }
 
 function validateTitle() {
-  const titleInput = document.getElementById('js-title-input');
+  const titleInput = document.getElementById('js-title_input');
   const title = titleInput.value.trim();
   El.removeClass(titleInput, INVALID_CLASS_NAME);
   if (title) {
@@ -269,9 +269,9 @@ function saveJoke() {
     return;
   }
 
-  const jokeBlocks = Array.from(document.getElementsByClassName('joke-block'));
+  const jokeBlocks = Array.from(document.getElementsByClassName('joke_block'));
   const blocks = jokeBlocks.map((jokeBlock) => {
-    return Array.from(jokeBlock.getElementsByClassName('joke-line'))
+    return Array.from(jokeBlock.getElementsByClassName('joke_line'))
         .map((line) => line.value.trim())
         .filter(Boolean);
   })
@@ -281,12 +281,12 @@ function saveJoke() {
 }
 
 function loadJoke(title) {
-  El.clearById('js-sortable-joke');
-  El.clearById('js-title-buttons');
+  El.clearById('js-joke--sortable');
+  El.clearById('js-buttons--title');
 
   // reset global counter since importing is effectively a global reset
   state.idCounter = 0;
-  document.getElementById('js-title-input').value = title;
+  document.getElementById('js-title_input').value = title;
   const blocks = getJokes()[title];
   blocks && blocks.forEach((block) => {
     // TODO: generalize for any number of nesting
@@ -302,13 +302,13 @@ function loadJoke(title) {
 }
 
 function loadOptions() {
-  const container = document.getElementById('js-title-buttons');
+  const container = document.getElementById('js-buttons--title');
   container.innerHTML = '';
 
   if (!state.isLoadOpen) {
     const jokes = getJokes();
     Object.keys(jokes).sort().forEach((title) => {
-      const jokeButton = El.create('button', { textContent: title, className: 'title-button' });
+      const jokeButton = El.create('button', { textContent: title, className: 'button--title' });
       jokeButton.onclick = () => loadJoke(title);
       container.appendChild(jokeButton);
     });

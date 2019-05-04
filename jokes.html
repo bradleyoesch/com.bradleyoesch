@@ -16,35 +16,35 @@
 
   <div class="container">
     <div class="title">
-      <input type="text" id="js-title-input" class="title-input" placeholder="title" />
+      <input type="text" id="js-title_input" class="title_input" placeholder="title" />
     </div>
-    <div id="js-sortable-joke" class="joke">
+    <div id="js-joke--sortable" class="joke">
     <!--
-      <div class="joke-block-container sortable">
-        <div class="joke-block-margin sortable"></div>
-        <div id="js-sortable-joke-block" class="joke-block">
-          <input type="text" id="js-initial-input" class="joke-line sortable" />
-          <input type="text" id="js-initial-input" class="joke-line sortable" />
+      <div class="joke_block--container sortable">
+        <div class="joke_block--margin sortable"></div>
+        <div id="js-joke_block--sortable" class="joke+block">
+          <input type="text" class="joke_line sortable" />
+          <input type="text" class="joke_line sortable" />
         </div>
       </div>
     -->
     </div>
     </div>
     <div class="buttons">
-      <button class="cta-button" onClick="saveJoke()">Save</button>
-      <!-- <button class="cta-button" onClick="createJokeBlock(true)">Create Block</button> -->
-      <button class="cta-button" onClick="loadOptions()">Load</button>
+      <button class="button--cta" onClick="saveJoke()">Save</button>
+      <!-- <button class="button--cta" onClick="createJokeBlock(true)">Create Block</button> -->
+      <button class="button--cta" onClick="loadOptions()">Load</button>
     </div>
-    <div id="js-title-buttons" class="buttons"></div>
+    <div id="js-buttons--title" class="buttons"></div>
     <div class="combined"><textarea id="js-combined" class="combined_textarea" style="display:none;"></textarea></div>
     <br />
     <!-- <a href="https://jsbin.com/rapecajusu/edit?html,js,console,output" target="_blank">jsbin</a> -->
   </div>
 
   <script>
-    const sortableContainer = document.getElementById('js-sortable-joke');
+    const sortableContainer = document.getElementById('js-joke--sortable');
     Sortable.create(sortableContainer);
-    const titleInput = document.getElementById('js-title-input');
+    const titleInput = document.getElementById('js-title_input');
     addTitleListeners(titleInput);
 
     // loadJoke('test');

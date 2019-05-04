@@ -86,7 +86,7 @@ input[type="text"], textarea {
 .title {
   margin-bottom: 1rem;
 
-  .title-input {
+  &_input {
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
@@ -97,34 +97,10 @@ input[type="text"], textarea {
   }
 }
 
-
-/*
-// left-border on hover, doesn't work when you resort
-.joke-block-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 0 .5rem 0 0;
-  background-color: $color-background;
-  border-color: $color-border;
-  transition: $transition;
-
-  &.active {
-    border-left: $border;
-  }
-
-  &.sortable-chosen {
-    background-color: $color-background;
-  }
-}
-*/
-
-
-
 .joke {
   margin-bottom: 1rem;
 
-  .joke-block-container {
+  &_block--container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -138,12 +114,12 @@ input[type="text"], textarea {
       background-color: $color-inner-background;
     }
 
-    .joke-block-margin {
+    .joke_block--margin {
       flex: 0 0 2rem;
       z-index: 1;
     }
 
-    .joke-block {
+    .joke_block {
       flex: 1 0 0;
       margin-left: -2rem;
       transition: $transition;
@@ -152,7 +128,7 @@ input[type="text"], textarea {
         margin-left: 0;
       }
 
-      .joke-line {
+      .joke_line {
         &.todo:not(:focus) {
           border-color: #94901f;
         }
@@ -166,7 +142,7 @@ input[type="text"], textarea {
   justify-content: center;
   margin-bottom: 1rem;
 
-  .cta-button, .title-button {
+  .button--cta, .button--title {
     margin-right: 1rem;
 
     &:last-child {
