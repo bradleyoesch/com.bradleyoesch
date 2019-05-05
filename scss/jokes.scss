@@ -139,11 +139,13 @@ input[type="text"], textarea {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 1rem;
+  padding: 0 .5rem;
 
   .button--cta, .button--title {
-    margin-right: 1rem;
+    margin: 0 .5rem 1rem;
 
     &:last-child {
       margin-right: 0;
