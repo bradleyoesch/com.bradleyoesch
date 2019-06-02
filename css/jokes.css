@@ -56,7 +56,7 @@ input[type="text"], textarea {
   cursor: grab; }
 
 .container {
-  padding: 1rem;
+  padding: 2rem;
   margin: 0; }
 
 .title {
@@ -90,23 +90,21 @@ input[type="text"], textarea {
       transition: all 0.2s ease-out; }
       .joke_block--container .joke_block.active {
         margin-left: 0; }
-      .joke_block--container .joke_block .joke_line.todo:not(:focus) {
-        border-color: #94901f; }
+      .joke_block--container .joke_block .joke_line.todo {
+        border-left: 3px solid #94901f;
+        padding-left: calc(1rem - 3px); }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 1rem;
-  padding: 0 .5rem; }
+  margin-bottom: 1rem; }
   .buttons .button--cta, .buttons .button--title {
     margin: 0 .5rem 1rem; }
     .buttons .button--cta:last-child, .buttons .button--title:last-child {
       margin-right: 0; }
 
-.combined {
-  padding: 0 1rem; }
-  .combined_textarea {
-    height: 10rem; }
+.combined_textarea {
+  height: 10rem; }
 
 /*# sourceMappingURL=jokes.css.map */

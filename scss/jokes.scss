@@ -79,7 +79,7 @@ input[type="text"], textarea {
 }
 
 .container {
-  padding: 1rem;
+  padding: 2rem;
   margin: 0;
 }
 
@@ -129,8 +129,9 @@ input[type="text"], textarea {
       }
 
       .joke_line {
-        &.todo:not(:focus) {
-          border-color: #94901f;
+        &.todo {
+          border-left: 3px solid #94901f;
+          padding-left: calc(1rem - 3px);
         }
       }
     }
@@ -142,7 +143,6 @@ input[type="text"], textarea {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 1rem;
-  padding: 0 .5rem;
 
   .button--cta, .button--title {
     margin: 0 .5rem 1rem;
@@ -154,8 +154,6 @@ input[type="text"], textarea {
 }
 
 .combined {
-  padding: 0 1rem;
-
   &_textarea {
     height: 10rem;
   }
