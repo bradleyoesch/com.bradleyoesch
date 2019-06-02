@@ -1,6 +1,6 @@
 const TODO_CLASS_NAME = 'todo';
 const INVALID_CLASS_NAME = 'invalid';
-const KEY_CODE = {
+const KeyCode = {
   BACKSPACE: 8,
   ENTER: 13,
   UP: 38,
@@ -82,8 +82,7 @@ const Line = {
 
 function addTitleListeners(el) {
   el.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-      // enter
+    if (event.keyCode === KeyCode.ENTER) {
       const jokeBlock = createJokeBlock();
       createNewLine(jokeBlock);
     }
@@ -105,7 +104,7 @@ function addMarginListeners(el) {
 
 function addLineListeners(el) {
   el.addEventListener('keyup', (event) => {
-    if (event.keyCode === KEY_CODE.ENTER) {
+    if (event.keyCode === KeyCode.ENTER) {
       if (el.value === '') {
         const jokeBlock = createJokeBlock(el);
         createNewLine(jokeBlock);
@@ -116,16 +115,16 @@ function addLineListeners(el) {
     }
   });
   el.addEventListener('keydown', (event) => {
-    if (event.keyCode === KEY_CODE.BACKSPACE && el.value === '') {
+    if (event.keyCode === KeyCode.BACKSPACE && el.value === '') {
       removeLine(el);
     }
-    if (event.keyCode === KEY_CODE.UP) {
+    if (event.keyCode === KeyCode.UP) {
       const previousLine = Line.previous(el);
       if (previousLine) {
         previousLine.focus()
       }
     }
-    if (event.keyCode === KEY_CODE.DOWN) {
+    if (event.keyCode === KeyCode.DOWN) {
       const nextLine = Line.next(el);
       if (nextLine) {
         nextLine.focus()
