@@ -151,6 +151,22 @@ input[type="text"], textarea {
       margin-right: 0;
     }
   }
+
+  .button--save {
+    position: relative;
+
+    &:after {
+      content: '\2713';
+      position: absolute;
+      right: 10px;
+      transition: all ease-out 0.1s;
+      opacity: 0;
+      color: #94901f;
+    }
+    &:focus:after {
+      opacity: 1;
+    }
+  }
 }
 
 .combined {

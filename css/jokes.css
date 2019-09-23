@@ -103,6 +103,17 @@ input[type="text"], textarea {
     margin: 0 .5rem 1rem; }
     .buttons .button--cta:last-child, .buttons .button--title:last-child {
       margin-right: 0; }
+  .buttons .button--save {
+    position: relative; }
+    .buttons .button--save:after {
+      content: '\2713';
+      position: absolute;
+      right: 10px;
+      transition: all ease-out 0.1s;
+      opacity: 0;
+      color: #94901f; }
+    .buttons .button--save:focus:after {
+      opacity: 1; }
 
 .combined_textarea {
   height: 10rem; }
